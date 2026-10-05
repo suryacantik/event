@@ -459,7 +459,7 @@
                   <p class="text-[9px] text-slate-400">Beri bintang 5 & bagikan ulasan toko</p>
                 </div>
               </div>
-              <a href="https://search.google.com/local/writereview?placeid=ChIJT3wqmK8Hby4RAWQpvczkc0c" target="_blank" onclick="markSocialOpened('gmaps_review')" id="btn_gmaps_review"
+              <a href="https://maps.app.goo.gl/MQyJeSCnjrffz2Mo6" onclick="openMapsApp(event)" id="btn_gmaps_review"
                 class="btn-active bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Review</a>
             </div>
           </div>
@@ -1379,6 +1379,32 @@
       localStorage.setItem('suryatokoku_sosmed_clicks', JSON.stringify(localVerificationStatus));
       updateSocialButtonsVisual();
       toggleSubmitButton();
+    }
+
+    function openMapsApp(e) {
+      if (e) e.preventDefault();
+      markSocialOpened('gmaps_review');
+
+      const isAndroid = /android/i.test(navigator.userAgent);
+      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      const mapsUrl = "https://maps.app.goo.gl/MQyJeSCnjrffz2Mo6";
+
+      if (isAndroid) {
+        // Membuka langsung ke aplikasi native Google Maps di Android (dengan fallback)
+        window.location.href = "intent://maps.app.goo.gl/MQyJeSCnjrffz2Mo6#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=" + encodeURIComponent(mapsUrl) + ";end";
+      } else if (isIOS) {
+        // Di perangkat iOS (iPhone/iPad), coba buka Google Maps App
+        const start = Date.now();
+        window.location.href = "comgooglemapsurl://maps.app.goo.gl/MQyJeSCnjrffz2Mo6";
+        setTimeout(() => {
+          if (Date.now() - start < 1500) {
+            window.location.href = mapsUrl;
+          }
+        }, 1000);
+      } else {
+        // Desktop browser
+        window.open(mapsUrl, "_blank");
+      }
     }
 
     function updateSocialButtonsVisual() {
