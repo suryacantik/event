@@ -106,9 +106,9 @@
     const CONFIG = {
       EVENT_NAME: "Surcan Beauty Selebration",
       BASE_URL: window.location.origin + window.location.pathname,
-      WHATSAPP_ADMIN: "628131310110",
-      SUPABASE_URL: "https://umjhmczidrzeqhubujyt.supabase.co", 
-      SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVtamhtY3ppZHJ6ZXFodWJ1anl0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY3MTUwNTgsImV4cCI6MjEwMjI5MTA1OH0.DUU2cPg_Rue_zY0HtQB-9R8YDBeJkuEchJfX9OR4jqo"
+      WHATSAPP_ADMIN: "6285117693637",
+      SUPABASE_URL: "https://ohtjcgarcbcbclpfywwj.supabase.co", 
+      SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9odGpjZ2FyY2JjYmNscGZ5d3dqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTExOTAxMzEsImV4cCI6MjEwNjc2NjEzMX0.Ac8RsBp7l_FdNKCjy_ZfdzrpcnB6qlgDgYHJy78lrmA"
     };
 
     const supabaseClient = window.supabase ? window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY) : null;
@@ -412,7 +412,7 @@
                   <h5 class="font-extrabold text-slate-800 text-[11px]">@suryacantik.id</h5>
                 </div>
               </div>
-              <a href="https://www.instagram.com/suryacantik.id?igsi=MWF3cGdvbjBkZHNocA==" target="_blank" onclick="markSocialOpened('ig_stk')" id="btn_ig_stk"
+              <a href="https://www.instagram.com/suryacantik.id" onclick="openInstagramApp(event)" id="btn_ig_stk"
                 class="btn-active bg-rose-500 hover:bg-rose-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Follow</a>
             </div>
 
@@ -448,19 +448,19 @@
             <!-- 4. Review Google Maps Langsung Bintang 5 -->
             <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
               <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 text-white flex items-center justify-center">
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 text-white flex items-center justify-center shadow-sm">
                   <i class="fa-solid fa-star text-xs"></i>
                 </div>
                 <div>
                   <h5 class="font-extrabold text-slate-800 text-[11px] flex items-center gap-1">
-                    Review Google Maps
+                    Beri Ulasan Surya Cantik
                     <span class="text-amber-500 font-black text-[10px]">⭐⭐⭐⭐⭐</span>
                   </h5>
-                  <p class="text-[9px] text-slate-400">Beri bintang 5 & bagikan ulasan toko</p>
+                  <p class="text-[9px] text-slate-400">Ketuk bintang 5 & tulis ulasan toko terbaikmu</p>
                 </div>
               </div>
-              <a href="https://maps.app.goo.gl/MQyJeSCnjrffz2Mo6" onclick="openMapsApp(event)" id="btn_gmaps_review"
-                class="btn-active bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Review</a>
+              <a href="https://search.google.com/local/writereview?placeid=ChIJT3wqmK8Hby4RAWQpvczkc0c" onclick="openMapsApp(event)" id="btn_gmaps_review"
+                class="btn-active bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl shadow-sm">Review</a>
             </div>
           </div>
 
@@ -565,6 +565,45 @@
             </button>
           </div>
           <p id="officerStatusText" class="text-[10px] text-slate-400 font-semibold"></p>
+        </div>
+
+        <!-- PENGATURAN INTERNAL TANGGAL UNDIAN (KHUSUS PETUGAS) -->
+        <div class="p-4 bg-gradient-to-br from-purple-50/60 via-pink-50/30 to-white border border-purple-200/70 rounded-2xl space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <h4 class="text-[11px] font-extrabold text-purple-800 uppercase tracking-wider">
+                Filter Tanggal Undian (Internal)
+              </h4>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" id="officerDateFilterToggle" onchange="saveOfficerDateFilterSettings()" class="sr-only peer">
+              <div class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-rose-500 peer-checked:to-purple-600"></div>
+            </label>
+          </div>
+
+          <p class="text-[10px] text-slate-500 font-medium leading-relaxed">
+            Jika aktif, pemenang Lucky Draw otomatis diprioritaskan dari peserta yang mendaftar pada rentang tanggal ini. <em>Di layar Lucky Draw tampilan dan animasi tetap menampilkan seluruh data undian normal.</em>
+          </p>
+
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 mb-1">Dari Tanggal Mulai</label>
+              <input type="date" id="officerDrawStartDate" onchange="saveOfficerDateFilterSettings()"
+                class="w-full h-10 px-3 rounded-xl border border-purple-100 bg-white text-xs text-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-300">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-slate-500 mb-1">Sampai Tanggal Akhir</label>
+              <input type="date" id="officerDrawEndDate" onchange="saveOfficerDateFilterSettings()"
+                class="w-full h-10 px-3 rounded-xl border border-purple-100 bg-white text-xs text-slate-700 focus:outline-none focus:ring-2 focus:ring-purple-300">
+            </div>
+          </div>
+
+          <div id="officerDateFilterStatus" class="text-[10px] font-bold text-purple-700 bg-white/90 px-3 py-2 rounded-xl border border-purple-100 flex items-center justify-between">
+            <span>Status Filter: Nonaktif (Semua Kupon Aktif Diundi)</span>
+          </div>
         </div>
 
         <!-- PANEL 1: KUPON UTAMA -->
@@ -848,7 +887,7 @@
           </div>
           <div class="flex gap-2 pt-2">
             <button type="button" onclick="closeEditModal()" class="flex-1 h-11 bg-slate-100 text-slate-600 rounded-xl font-bold">Batal</button>
-            <button type="submit" class="flex-1 h-11 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-bold shadow-sm">Simpan</button>
+            <button type="submit" class="flex-1 h-11 bg-rose-500 hover:bg-rose-600 text-white font-bold shadow-sm">Simpan</button>
           </div>
         </form>
       </div>
@@ -856,7 +895,7 @@
   </section>
 
   <!-- ======================================================= -->
-  <!-- 4. HALAMAN UNDIAN: LUCKY DRAW 23 HADIAH (#undian)       -->
+  <!-- 4. HALAMAN UNDIAN: LUCKY DRAW 10 HADIAH (#undian)       -->
   <!-- ======================================================= -->
   <section id="pageUndian" class="hidden slide-up flex-grow flex flex-col justify-between bg-gradient-to-b from-[#fdf4ff] via-[#fffaf6] to-[#faf5ff] text-slate-800 py-6">
     <main class="w-full max-w-7xl mx-auto px-4 flex-grow flex flex-col lg:flex-row gap-6 items-stretch justify-center">
@@ -873,7 +912,7 @@
           <div class="mt-2.5 flex flex-wrap items-center gap-2 text-xs font-bold">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-purple-50 border border-purple-200 shadow-sm">
               <span class="w-2 h-2 rounded-full bg-pink-500 animate-ping"></span>
-              <span class="text-purple-700 font-extrabold" id="currentPrizeLabel">SEDANG MENGUNDI: HADIAH KE-23</span>
+              <span class="text-purple-700 font-extrabold" id="currentPrizeLabel">SEDANG MENGUNDI: HADIAH KE-10</span>
             </div>
             <button type="button" onclick="openRulesModal()" class="btn-active px-3 py-1.5 rounded-xl bg-pink-50 hover:bg-pink-100 border border-pink-200 text-pink-700 text-[11px] font-extrabold flex items-center gap-1.5 shadow-sm transition">
               <i class="fa-solid fa-circle-info text-pink-500"></i> Ketentuan Lucky Draw
@@ -922,17 +961,17 @@
           </div>
           <div class="clean-draw-card rounded-2xl p-3.5">
             <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Pemenang</span>
-            <div id="statTotalPemenang" class="text-xl sm:text-2xl font-black text-amber-500 mt-0.5">0 / 23</div>
+            <div id="statTotalPemenang" class="text-xl sm:text-2xl font-black text-amber-500 mt-0.5">0 / 10</div>
           </div>
         </div>
       </div>
 
-      <!-- KANAN: Daftar Log Pemenang (Hadiah ke-23 di paling bawah) -->
+      <!-- KANAN: Daftar Log Pemenang (Hadiah ke-10 di paling bawah) -->
       <div class="lg:w-2/5 flex flex-col">
         <div class="clean-draw-card rounded-3xl p-5 flex flex-col h-full shadow-md">
           <div class="flex justify-between items-center pb-3 border-b border-purple-100 mb-3">
             <h3 class="font-extrabold tracking-wide text-xs sm:text-sm text-purple-700 flex items-center gap-2">
-              <i class="fa-solid fa-trophy text-amber-500"></i> DAFTAR PEMENANG (23 HADIAH)
+              <i class="fa-solid fa-trophy text-amber-500"></i> DAFTAR PEMENANG (10 HADIAH)
             </h3>
             <button onclick="clearAllWinners()" class="text-[10px] text-rose-500 hover:text-rose-600 font-bold flex items-center gap-1 transition">
               <i class="fa-solid fa-rotate-left"></i> Reset
@@ -950,7 +989,7 @@
         <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-600 text-white mx-auto mb-3 flex items-center justify-center text-2xl shadow-md">
           <i class="fa-solid fa-crown animate-bounce"></i>
         </div>
-        <h4 class="text-xs uppercase tracking-widest text-purple-600 font-black" id="modalPrizeTitle">HADIAH KE-23</h4>
+        <h4 class="text-xs uppercase tracking-widest text-purple-600 font-black" id="modalPrizeTitle">HADIAH KE-10</h4>
         
         <div class="my-4 p-5 rounded-2xl bg-gradient-to-br from-pink-50/50 to-purple-50/50 border border-purple-200/70">
           <div id="modalWinnerNumber" class="text-3xl sm:text-4xl font-black font-mono text-pink-600 tracking-wider">STK-10001</div>
@@ -995,14 +1034,14 @@
 
           <div class="flex items-start gap-2.5 p-3 rounded-2xl bg-pink-50/50 border border-pink-100">
             <i class="fa-solid fa-gift text-pink-600 mt-0.5 flex-shrink-0"></i>
-            <span>Tersedia <strong>23 hadiah</strong> yang akan diundi secara terpisah, mulai dari <strong>Hadiah ke-23 hingga Hadiah ke-1 (Hadiah Utama)</strong>.</span>
+            <span>Tersedia <strong>10 hadiah</strong> yang akan diundi secara terpisah, mulai dari <strong>Hadiah ke-10 hingga Hadiah ke-1 (Hadiah Utama)</strong>.</span>
           </div>
 
           <div class="flex items-start gap-2.5 p-3 rounded-2xl bg-amber-50/60 border border-amber-200/70">
             <i class="fa-solid fa-ban text-amber-600 mt-0.5 flex-shrink-0"></i>
             <div>
               <p class="font-bold text-amber-900">Ketentuan Peserta Hangus:</p>
-              <p class="mt-1 text-slate-700">Apabila seorang peserta terpilih sebagai pemenang pada suatu hadiah namun dinyatakan <strong>hangus/tidak memenuhi ketentuan</strong>, maka peserta tersebut <strong>tidak dapat mengikuti pengundian untuk hadiah-hadiah berikutnya</strong> (gugur dari seluruh putaran undian).</p>
+              <p class="mt-1 text-slate-700">Apabila seorang peserta terpilih sebagai pemenang pada suatu hadiah namun dinyatakan <strong>hangus/tidak memenuhi ketentuan</strong>, maka peserta tersebut <strong>tidak dapat mengikuti pengundian untuk hadiah-hadiah berikutnya</strong> (gugur dari seluruh putaran undian, baik kupon maupun WhatsApp).</p>
             </div>
           </div>
 
@@ -1080,10 +1119,19 @@
     let allDiscardedCodes = new Set(JSON.parse(localStorage.getItem('stk_discarded_codes') || '[]'));
     let allDiscardedWhatsapps = new Set(JSON.parse(localStorage.getItem('stk_discarded_whatsapps') || '[]'));
 
-    function isRegisteredSept25to27(dateStr) {
+    function isEligibleByOfficerDateFilter(dateStr) {
+      const isFilterActive = localStorage.getItem('stk_date_filter_active') === 'true';
+      if (!isFilterActive) return true;
       if (!dateStr) return false;
+
+      const startDate = localStorage.getItem('stk_date_filter_start');
+      const endDate = localStorage.getItem('stk_date_filter_end');
+      if (!startDate && !endDate) return true;
+
       const d = new Date(dateStr);
       if (isNaN(d.getTime())) return false;
+
+      let dateFormatted = '';
       try {
         const formatter = new Intl.DateTimeFormat('en-CA', {
           timeZone: 'Asia/Jakarta',
@@ -1091,15 +1139,79 @@
           month: '2-digit',
           day: '2-digit'
         });
-        const formatted = formatter.format(d);
-        const [y, m, day] = formatted.split('-').map(Number);
-        if (m === 9 && day >= 25 && day <= 27) return true;
+        dateFormatted = formatter.format(d);
       } catch (e) {
-        const m = d.getMonth() + 1;
-        const day = d.getDate();
-        if (m === 9 && day >= 25 && day <= 27) return true;
+        dateFormatted = d.toISOString().slice(0, 10);
       }
-      return false;
+
+      if (startDate && dateFormatted < startDate) return false;
+      if (endDate && dateFormatted > endDate) return false;
+      return true;
+    }
+
+    function initOfficerDateFilterUI() {
+      const toggle = document.getElementById('officerDateFilterToggle');
+      const startInput = document.getElementById('officerDrawStartDate');
+      const endInput = document.getElementById('officerDrawEndDate');
+      const statusBox = document.getElementById('officerDateFilterStatus');
+
+      const isFilterActive = localStorage.getItem('stk_date_filter_active') === 'true';
+      const startDate = localStorage.getItem('stk_date_filter_start') || '';
+      const endDate = localStorage.getItem('stk_date_filter_end') || '';
+
+      if (toggle) toggle.checked = isFilterActive;
+      if (startInput) startInput.value = startDate;
+      if (endInput) endInput.value = endDate;
+
+      updateOfficerDateFilterStatusUI();
+    }
+
+    function saveOfficerDateFilterSettings() {
+      const toggle = document.getElementById('officerDateFilterToggle');
+      const startInput = document.getElementById('officerDrawStartDate');
+      const endInput = document.getElementById('officerDrawEndDate');
+
+      const isActive = toggle ? toggle.checked : false;
+      const startVal = startInput ? startInput.value : '';
+      const endVal = endInput ? endInput.value : '';
+
+      localStorage.setItem('stk_date_filter_active', isActive ? 'true' : 'false');
+      localStorage.setItem('stk_date_filter_start', startVal);
+      localStorage.setItem('stk_date_filter_end', endVal);
+
+      updateOfficerDateFilterStatusUI();
+    }
+
+    function updateOfficerDateFilterStatusUI() {
+      const statusBox = document.getElementById('officerDateFilterStatus');
+      if (!statusBox) return;
+
+      const isActive = localStorage.getItem('stk_date_filter_active') === 'true';
+      const startDate = localStorage.getItem('stk_date_filter_start') || '';
+      const endDate = localStorage.getItem('stk_date_filter_end') || '';
+
+      if (isActive) {
+        let periodDesc = 'Semua Tanggal';
+        if (startDate && endDate) periodDesc = `${startDate} s/d ${endDate}`;
+        else if (startDate) periodDesc = `Mulai ${startDate}`;
+        else if (endDate) periodDesc = `Sampai ${endDate}`;
+
+        statusBox.innerHTML = `
+          <span class="text-emerald-700 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Filter Aktif: Peserta tanggal <strong>${periodDesc}</strong>
+          </span>
+        `;
+        statusBox.className = "text-[10px] font-bold text-emerald-800 bg-emerald-50 px-3 py-2 rounded-xl border border-emerald-200 flex items-center justify-between";
+      } else {
+        statusBox.innerHTML = `
+          <span class="text-slate-500 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+            Filter Nonaktif: Semua kupon aktif diundi normal
+          </span>
+        `;
+        statusBox.className = "text-[10px] font-bold text-slate-600 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200 flex items-center justify-between";
+      }
     }
 
     let audioCtx = null;
@@ -1247,6 +1359,7 @@
       window.addEventListener('hashchange', handleHashNavigation);
       checkUrlForTicket();
       updateDurationButtonLabel();
+      initOfficerDateFilterUI();
 
       const savedSosmed = localStorage.getItem('suryatokoku_sosmed_clicks');
       if (savedSosmed) {
@@ -1381,29 +1494,43 @@
       toggleSubmitButton();
     }
 
+    function openInstagramApp(e) {
+      if (e) e.preventDefault();
+      markSocialOpened('ig_stk');
+
+      const username = 'suryacantik.id';
+      const webUrl = 'https://www.instagram.com/suryacantik.id?igsi=MWF3cGdvbjBkZHNocA==';
+      const isAndroid = /android/i.test(navigator.userAgent);
+      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+
+      if (isAndroid) {
+        window.location.href = `intent://instagram.com/_u/${username}#Intent;package=com.instagram.android;scheme=https;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
+      } else if (isIOS) {
+        window.location.href = `instagram://user?username=${username}`;
+        setTimeout(() => {
+          if (!document.hidden) {
+            window.location.href = webUrl;
+          }
+        }, 1200);
+      } else {
+        window.open(webUrl, "_blank");
+      }
+    }
+
     function openMapsApp(e) {
       if (e) e.preventDefault();
       markSocialOpened('gmaps_review');
 
+      const reviewUrl = "https://search.google.com/local/writereview?placeid=ChIJT3wqmK8Hby4RAWQpvczkc0c";
       const isAndroid = /android/i.test(navigator.userAgent);
       const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-      const mapsUrl = "https://maps.app.goo.gl/MQyJeSCnjrffz2Mo6";
 
       if (isAndroid) {
-        // Membuka langsung ke aplikasi native Google Maps di Android (dengan fallback)
-        window.location.href = "intent://maps.app.goo.gl/MQyJeSCnjrffz2Mo6#Intent;scheme=https;package=com.google.android.apps.maps;S.browser_fallback_url=" + encodeURIComponent(mapsUrl) + ";end";
+        window.location.href = `intent://search.google.com/local/writereview?placeid=ChIJT3wqmK8Hby4RAWQpvczkc0c#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(reviewUrl)};end`;
       } else if (isIOS) {
-        // Di perangkat iOS (iPhone/iPad), coba buka Google Maps App
-        const start = Date.now();
-        window.location.href = "comgooglemapsurl://maps.app.goo.gl/MQyJeSCnjrffz2Mo6";
-        setTimeout(() => {
-          if (Date.now() - start < 1500) {
-            window.location.href = mapsUrl;
-          }
-        }, 1000);
+        window.location.href = reviewUrl;
       } else {
-        // Desktop browser
-        window.open(mapsUrl, "_blank");
+        window.open(reviewUrl, "_blank");
       }
     }
 
@@ -1781,7 +1908,7 @@
               <div class="flex items-center gap-1.5 text-emerald-600 font-bold">
                 <i class="fa-solid fa-circle-check"></i> Terverifikasi oleh Petugas: ${data.petugas_aktivasi || 'Admin'}
               </div>
-              <p class="text-slate-500 text-[10px]">Kupon bonus ini telah <strong>sah dan aktif</strong> masuk ke dalam sistem undian 23 Hadiah Lucky Draw!</p>
+              <p class="text-slate-500 text-[10px]">Kupon bonus ini telah <strong>sah dan aktif</strong> masuk ke dalam sistem undian 10 Hadiah Lucky Draw!</p>
             </div>
           </div>
         `;
@@ -2106,51 +2233,38 @@
       activeOfficerAction = null;
     }
 
-    async function submitOfficerDecision() {
-      if (!activeOfficerAction) return;
-      const { type, creatorCode, petugas } = activeOfficerAction;
-      let reason = null;
+    async function handleDashboardLogin(e) {
+      e.preventDefault();
+      const pwdInput = document.getElementById('inputDashboardPassword');
+      const pwd = pwdInput ? pwdInput.value.trim() : '';
+      const errEl = document.getElementById('authErrorMsg');
+      if (errEl) errEl.classList.add('hidden');
 
-      if (type === 'reject') {
-        const selectVal = document.getElementById('selectRejectionReason').value;
-        reason = selectVal === 'Lainnya' ? document.getElementById('customRejectionReason').value.trim() : selectVal;
-        if (!reason) return showNotification("Alasan Kosong", "Pilih atau tulis alasan penolakan.", "error");
-      }
+      showLoading(true, "Memverifikasi kata sandi admin dari Supabase...");
 
-      closeOfficerModal();
-      showLoading(true, "Menyimpan status ke server...");
-
-      const status = type === 'approve' ? 'Aktif' : 'Ditolak';
       try {
-        const { error } = await supabaseClient
-          .from('peserta_event')
-          .update({
-            creator_approval: status,
-            creator_rejection_reason: reason,
-            petugas_aktivasi: petugas,
-            waktu_aktivasi: new Date().toISOString()
-          })
-          .eq('creator_code', creatorCode);
+        const { data, error } = await supabaseClient
+          .from('pengaturan_event')
+          .select('value')
+          .eq('key', 'admin_password')
+          .maybeSingle();
 
         if (error) throw error;
-        await loadCreatorCoupons();
-        showNotification("Berhasil", `Kupon creator ${creatorCode} diubah menjadi ${status}.`, "success");
+
+        // Mengambil nilai kata sandi dari kolom value JSONB di Supabase
+        const validPassword = data?.value?.password || (typeof data?.value === 'string' ? data?.value : null);
+
+        if (validPassword && pwd === validPassword) {
+          isDashboardAuthenticated = true;
+          document.getElementById('dashboardAuthOverlay').classList.add('hidden');
+          loadDashboardData();
+        } else {
+          if (errEl) errEl.classList.remove('hidden');
+        }
       } catch (err) {
-        showNotification("Gagal", err.message, "error");
+        showNotification("Gagal Login", "Tidak dapat memverifikasi kata sandi: " + err.message, "error");
       } finally {
         showLoading(false);
-      }
-    }
-
-    function handleDashboardLogin(e) {
-      e.preventDefault();
-      const pwd = document.getElementById('inputDashboardPassword').value;
-      if (pwd === 'Surtok2003') {
-        isDashboardAuthenticated = true;
-        document.getElementById('dashboardAuthOverlay').classList.add('hidden');
-        loadDashboardData();
-      } else {
-        document.getElementById('authErrorMsg').classList.remove('hidden');
       }
     }
 
@@ -2684,32 +2798,31 @@
       const pool = [];
 
       allParticipants.forEach(p => {
+        // Jangan sertakan jika nomor WhatsApp sudah pernah menang atau sudah pernah dinyatakan hangus
         if (p.whatsapp && (winnerWhatsapps.has(p.whatsapp) || allDiscardedWhatsapps.has(p.whatsapp))) return;
 
-        const isSept25to27 = isRegisteredSept25to27(p.created_at);
-
-        if (p.kode_undian && (p.status_aktivasi === 'AKTIF' || isSept25to27)) {
+        // Kupon Utama yang berstatus AKTIF
+        if (p.kode_undian && p.status_aktivasi === 'AKTIF') {
           if (!winnerCodes.has(p.kode_undian) && !allDiscardedCodes.has(p.kode_undian)) {
             pool.push({
               kode_undian: p.kode_undian,
               nama: p.nama,
               whatsapp: p.whatsapp,
               created_at: p.created_at,
-              tipe: 'Kupon Utama',
-              isSept25to27: isSept25to27
+              tipe: 'Kupon Utama'
             });
           }
         }
 
-        if (p.creator_code && (p.creator_approval === 'Aktif' || isSept25to27)) {
+        // Kupon Content Creator yang berstatus AKTIF
+        if (p.creator_code && p.creator_approval === 'Aktif') {
           if (!winnerCodes.has(p.creator_code) && !allDiscardedCodes.has(p.creator_code)) {
             pool.push({
               kode_undian: p.creator_code,
               nama: p.nama,
               whatsapp: p.whatsapp,
               created_at: p.created_at,
-              tipe: 'Kupon Content Creator',
-              isSept25to27: isSept25to27
+              tipe: 'Kupon Content Creator'
             });
           }
         }
@@ -2738,7 +2851,7 @@
 
     function getNextPrizeIndex() {
       const existingPrizes = new Set(allWinners.map(w => w.hadiah_ke));
-      for (let i = 23; i >= 1; i--) {
+      for (let i = 10; i >= 1; i--) {
         if (!existingPrizes.has(i)) return i;
       }
       return null;
@@ -2753,7 +2866,7 @@
       const elBelumAktif = document.getElementById('statBelumAktif');
       if (elBelumAktif) elBelumAktif.innerText = belumAktif;
       document.getElementById('statSisaKandidat').innerText = candidates.length;
-      document.getElementById('statTotalPemenang').innerText = `${allWinners.length} / 23`;
+      document.getElementById('statTotalPemenang').innerText = `${allWinners.length} / 10`;
 
       const nextPrize = getNextPrizeIndex();
       const prizeLabel = document.getElementById('currentPrizeLabel');
@@ -2765,7 +2878,7 @@
             prizeLabel.innerText = `SEDANG MENGUNDI: HADIAH KE-${nextPrize}`;
           }
         } else {
-          prizeLabel.innerText = `SEMUA 23 HADIAH SELESAI DIUNDI! 🎉`;
+          prizeLabel.innerText = `SEMUA 10 HADIAH SELESAI DIUNDI! 🎉`;
         }
       }
     }
@@ -2775,15 +2888,25 @@
       getAudioContext();
 
       const nextPrize = getNextPrizeIndex();
-      if (nextPrize === null) return showNotification("Selesai", "Seluruh 23 hadiah telah diundi!", "info");
+      if (nextPrize === null) return showNotification("Selesai", "Seluruh 10 hadiah telah diundi!", "info");
 
       const candidates = getActiveCandidates();
       if (candidates.length === 0) {
         return showNotification("Kandidat Habis", "Tidak ada kandidat kupon yang tersedia untuk diundi.", "error");
       }
 
-      const targetPool = candidates.filter(c => isRegisteredSept25to27(c.created_at));
-      const eligiblePool = targetPool.length > 0 ? targetPool : candidates;
+      // Filter Internal Petugas: Menyeleksi kandidat berdasarkan rentang tanggal settingan petugas
+      const isDateFilterActive = localStorage.getItem('stk_date_filter_active') === 'true';
+      let eligiblePool = candidates;
+
+      if (isDateFilterActive) {
+        const filteredPool = candidates.filter(c => isEligibleByOfficerDateFilter(c.created_at));
+        if (filteredPool.length > 0) {
+          eligiblePool = filteredPool;
+        } else {
+          eligiblePool = candidates;
+        }
+      }
 
       isDrawingRunning = true;
       const btn = document.getElementById('btnStartDraw');
@@ -2830,6 +2953,7 @@
           return;
         }
 
+        // Tampilan slot tetap memutar secara acak dari seluruh pool kandidat aktif
         const randomPick = candidates[Math.floor(Math.random() * candidates.length)];
         if (displayNumber) displayNumber.innerText = randomPick.kode_undian;
         if (displayName) displayName.innerText = randomPick.nama;
@@ -2920,7 +3044,7 @@
           <div class="h-44 flex flex-col items-center justify-center text-center text-slate-400">
             <i class="fa-solid fa-gift text-2xl text-purple-300 mb-2"></i>
             <p class="font-bold text-slate-500">Belum Ada Pemenang</p>
-            <p class="text-[10px] text-slate-400">Tekan 'Mulai Undian' untuk mengundi Hadiah ke-23</p>
+            <p class="text-[10px] text-slate-400">Tekan 'Mulai Undian' untuk mengundi Hadiah ke-10</p>
           </div>
         `;
         return;
@@ -2978,7 +3102,7 @@
     function clearAllWinners() {
       showConfirmDialog(
         "Reset Seluruh Pemenang",
-        "Hapus semua daftar pemenang? Semua 23 hadiah akan diundi ulang.",
+        "Hapus semua daftar pemenang? Semua 10 hadiah akan diundi ulang.",
         async () => {
           showLoading(true, "Mereset data pemenang...");
           try {
