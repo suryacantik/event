@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Beautyfest Suryatokoku - Kupon, Scanner, Dashboard & Lucky Draw</title>
+  <title>Surcan Beauty Selebration - Kupon, Scanner, Dashboard & Lucky Draw</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@
 
   <script>
     const CONFIG = {
-      EVENT_NAME: "Beautyfest Suryatokoku",
+      EVENT_NAME: "Surcan Beauty Selebration",
       BASE_URL: window.location.origin + window.location.pathname,
       WHATSAPP_ADMIN: "628131310110",
       SUPABASE_URL: "https://umjhmczidrzeqhubujyt.supabase.co", 
@@ -115,15 +115,15 @@
   </script>
 
   <!-- ================= TOP NAVIGATION BAR (HASH ROUTING) ================= -->
-  <nav class="hidden w-full bg-white/80 backdrop-blur-md border-b border-rose-100/60 sticky top-0 z-40 transition-all">
+  <nav class="w-full bg-white/80 backdrop-blur-md border-b border-rose-100/60 sticky top-0 z-40 transition-all">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2">
         <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-rose-500 to-amber-400 flex items-center justify-center text-white shadow-sm font-bold text-base">
           S
         </div>
         <div>
-          <h1 class="font-extrabold text-sm text-slate-800 leading-tight tracking-tight">Suryatokoku</h1>
-          <p class="text-[10px] text-rose-500 font-bold uppercase tracking-wider">Beautyfest 2026</p>
+          <h1 class="font-extrabold text-sm text-slate-800 leading-tight tracking-tight">Surya Cantik</h1>
+          <p class="text-[10px] text-rose-500 font-bold uppercase tracking-wider">Beauty Selebration</p>
         </div>
       </a>
 
@@ -154,7 +154,7 @@
         <i class="fa-solid fa-sparkles text-2xl text-rose-500"></i>
       </div>
       <h3 class="text-base font-extrabold text-slate-800 mb-1">Memproses Data</h3>
-      <p id="loadingText" class="text-xs text-slate-400 font-medium leading-relaxed">Menghubungkan ke server Supabase...</p>
+      <p id="loadingText" class="text-xs text-slate-400 font-medium leading-relaxed">Menghubungkan ke server...</p>
     </div>
   </div>
 
@@ -255,7 +255,7 @@
     <div id="wrapperFormDaftar" class="bg-white/95 rounded-[2.5rem] shadow-cute border border-rose-100/60 overflow-hidden">
       <!-- Header Banner Gambar (Baner.png) -->
       <div class="w-full overflow-hidden border-b border-rose-100/60 bg-rose-50/30">
-        <img src="Baner.png" alt="Festival Belanja Beautyfest Suryatokoku" class="w-full h-auto object-cover block" onerror="this.onerror=null; this.src='https://placehold.co/600x250/fff1f2/f43f5e?text=Beautyfest+Suryatokoku';">
+        <img src="Baner.png" alt="Festival Belanja Surcan Beauty Selebration" class="w-full h-auto object-cover block" onerror="this.onerror=null; this.src='https://placehold.co/600x250/fff1f2/f43f5e?text=Surcan+Beauty+Selebration';">
       </div>
 
       <form id="formPendaftaran" class="p-6 space-y-5" onsubmit="handleRegistration(event)">
@@ -343,13 +343,13 @@
           </div>
         </div>
 
-        <!-- KOTAK BONUS 1 KUPON UNDIAN -->
-        <div class="pt-3 border-t border-rose-50 space-y-4">
+        <!-- KOTAK BONUS 1 KUPON UNDIAN (SEMENTARA DISEMBUNYIKAN) -->
+        <div class="hidden pt-3 border-t border-rose-50 space-y-4">
           <div class="bg-rose-50/50 border border-rose-200/60 rounded-3xl p-4 text-xs space-y-2.5">
             <div class="font-black text-rose-600 flex items-center gap-1.5 text-sm uppercase">
               <i class="fa-solid fa-gift animate-bounce"></i> BONUS 1 KUPON UNDIAN!
             </div>
-            <p class="text-slate-700 font-bold leading-relaxed">Bagikan keseruan Belanja kamu di Suryatokoku ke:</p>
+            <p class="text-slate-700 font-bold leading-relaxed">Bagikan keseruan Belanja kamu di Surya Cantik ke:</p>
             <ul class="space-y-1.5 text-slate-600 font-medium pl-1">
               <li class="flex items-start gap-1.5">
                 <i class="fa-solid fa-camera text-rose-500 mt-0.5"></i>
@@ -357,7 +357,7 @@
               </li>
               <li class="flex items-start gap-1.5">
                 <i class="fa-solid fa-at text-rose-500 mt-0.5"></i>
-                <span>Tag <strong>@suryatokoku.id</strong> dan <strong>@suryafluencers</strong></span>
+                <span>Tag <strong>@suryacantik.id</strong></span>
               </li>
               <li class="flex items-start gap-1.5">
                 <i class="fa-solid fa-lock-open text-rose-500 mt-0.5"></i>
@@ -370,7 +370,7 @@
           <!-- Radio Status Creator -->
           <div class="space-y-2">
             <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-              Apakah kamu sudah membagikan keseruan belanja di Suryatokoku di Instagram? <span class="text-rose-500">*</span>
+              Apakah kamu sudah membagikan keseruan belanja di Surya Cantik di Instagram? <span class="text-rose-500">*</span>
             </label>
             <div class="grid grid-cols-2 gap-2.5">
               <label class="flex items-center justify-between p-3.5 border border-rose-100 rounded-2xl bg-white cursor-pointer hover:bg-rose-50/20 text-xs font-bold">
@@ -392,92 +392,45 @@
           </div>
         </div>
 
-        <!-- SYARAT PENDAFTARAN (6 MEDIA SOSIAL) -->
+        <!-- SYARAT PENDAFTARAN (4 SOSIAL MEDIA & GMAPS) -->
         <div class="pt-4 border-t border-rose-50 space-y-3">
           <div>
             <h4 class="text-xs font-extrabold text-slate-800 uppercase flex items-center gap-1.5">
               <i class="fa-solid fa-heart text-rose-500"></i> Lengkapi Syarat Pendaftaran
             </h4>
-            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Ketuk tombol di bawah dan ikuti media sosial resmi Suryatokoku:</p>
+            <p class="text-[10px] text-slate-400 font-medium mt-0.5">Ketuk tombol di bawah dan ikuti media sosial resmi & ulasan Surya Cantik:</p>
           </div>
 
           <div class="space-y-2 text-xs">
-            <!-- 1. IG Suryatokoku -->
+            <!-- 1. IG @suryacantik.id -->
             <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
               <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center">
                   <i class="fa-brands fa-instagram"></i>
                 </div>
                 <div>
-                  <h5 class="font-extrabold text-slate-800 text-[11px]">Suryatokoku ID</h5>
-                  <p class="text-[9px] text-slate-400">@suryatokoku.id</p>
+                  <h5 class="font-extrabold text-slate-800 text-[11px]">@suryacantik.id</h5>
                 </div>
               </div>
-              <a href="https://www.instagram.com/suryatokoku.id" target="_blank" onclick="markSocialOpened('ig_stk')" id="btn_ig_stk"
+              <a href="https://www.instagram.com/suryacantik.id?igsi=MWF3cGdvbjBkZHNocA==" target="_blank" onclick="markSocialOpened('ig_stk')" id="btn_ig_stk"
                 class="btn-active bg-rose-500 hover:bg-rose-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Follow</a>
             </div>
 
-            <!-- 2. IG Suryafluencers -->
-            <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-yellow-500 to-pink-500 text-white flex items-center justify-center">
-                  <i class="fa-brands fa-instagram"></i>
-                </div>
-                <div>
-                  <h5 class="font-extrabold text-slate-800 text-[11px]">Suryafluencers</h5>
-                  <p class="text-[9px] text-slate-400">@suryafluencers</p>
-                </div>
-              </div>
-              <a href="https://www.instagram.com/suryafluencers" target="_blank" onclick="markSocialOpened('ig_sf')" id="btn_ig_sf"
-                class="btn-active bg-rose-500 hover:bg-rose-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Follow</a>
-            </div>
-
-            <!-- 3. Saluran IG -->
-            <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-600 to-rose-500 text-white flex items-center justify-center">
-                  <i class="fa-solid fa-bullhorn text-xs"></i>
-                </div>
-                <div>
-                  <h5 class="font-extrabold text-slate-800 text-[11px]">Saluran Instagram</h5>
-                  <p class="text-[9px] text-slate-400">Suryatokoku Channel</p>
-                </div>
-              </div>
-              <a href="https://www.instagram.com/channel/AbboHvVLdKnTQFRB/" target="_blank" onclick="markSocialOpened('ig_channel')" id="btn_ig_channel"
-                class="btn-active bg-rose-500 hover:bg-rose-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Join</a>
-            </div>
-
-            <!-- 4. Instagram Suryatokoku Beautyfest -->
-            <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
-              <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-pink-500 via-rose-500 to-purple-600 text-white flex items-center justify-center">
-                  <i class="fa-brands fa-instagram text-sm"></i>
-                </div>
-                <div>
-                  <h5 class="font-extrabold text-slate-800 text-[11px]">Suryatokoku Beautyfest</h5>
-                  <p class="text-[9px] text-slate-400">@suryatokokubeautyfest</p>
-                </div>
-              </div>
-              <a href="https://www.instagram.com/suryatokokubeautyfest" target="_blank" onclick="markSocialOpened('ig_bf')" id="btn_ig_bf"
-                class="btn-active bg-rose-500 hover:bg-rose-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Follow</a>
-            </div>
-
-            <!-- 5. TikTok -->
+            <!-- 2. TikTok @suryacantiksay -->
             <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
               <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-xl bg-black text-white flex items-center justify-center">
                   <i class="fa-brands fa-tiktok"></i>
                 </div>
                 <div>
-                  <h5 class="font-extrabold text-slate-800 text-[11px]">TikTok</h5>
-                  <p class="text-[9px] text-slate-400">@suryatokoku.id</p>
+                  <h5 class="font-extrabold text-slate-800 text-[11px]">@suryacantiksay</h5>
                 </div>
               </div>
-              <a href="https://www.tiktok.com/@suryatokoku.id" target="_blank" onclick="markSocialOpened('tiktok_stk')" id="btn_tiktok_stk"
+              <a href="https://www.tiktok.com/@suryacantiksay?_r=1&_t=ZS-99MTICIUzMQ" target="_blank" onclick="markSocialOpened('tiktok_stk')" id="btn_tiktok_stk"
                 class="btn-active bg-black hover:bg-slate-800 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Follow</a>
             </div>
 
-            <!-- 6. Saluran WA -->
+            <!-- 3. Saluran WhatsApp -->
             <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
               <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center">
@@ -485,18 +438,36 @@
                 </div>
                 <div>
                   <h5 class="font-extrabold text-slate-800 text-[11px]">Saluran WhatsApp</h5>
-                  <p class="text-[9px] text-slate-400">Suryatokoku Channel</p>
+                  <p class="text-[9px] text-slate-400">Surya Cantik Channel</p>
                 </div>
               </div>
-              <a href="https://whatsapp.com/channel/0029VbC7wYrADTODLH9f8g0a" target="_blank" onclick="markSocialOpened('wa_channel')" id="btn_wa_channel"
+              <a href="https://whatsapp.com/channel/0029VbBZzgC9mrGhrSZtpw0C" target="_blank" onclick="markSocialOpened('wa_channel')" id="btn_wa_channel"
                 class="btn-active bg-emerald-500 hover:bg-emerald-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Join</a>
+            </div>
+
+            <!-- 4. Review Google Maps Langsung Bintang 5 -->
+            <div class="p-3 border border-rose-100 rounded-2xl flex items-center justify-between bg-white">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 to-rose-500 text-white flex items-center justify-center">
+                  <i class="fa-solid fa-star text-xs"></i>
+                </div>
+                <div>
+                  <h5 class="font-extrabold text-slate-800 text-[11px] flex items-center gap-1">
+                    Review Google Maps
+                    <span class="text-amber-500 font-black text-[10px]">⭐⭐⭐⭐⭐</span>
+                  </h5>
+                  <p class="text-[9px] text-slate-400">Beri bintang 5 & bagikan ulasan toko</p>
+                </div>
+              </div>
+              <a href="https://search.google.com/local/writereview?placeid=ChIJT3wqmK8Hby4RAWQpvczkc0c" target="_blank" onclick="markSocialOpened('gmaps_review')" id="btn_gmaps_review"
+                class="btn-active bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold py-1.5 px-3.5 rounded-xl">Review</a>
             </div>
           </div>
 
           <label class="flex items-start gap-2.5 p-3.5 bg-rose-50/40 rounded-2xl border border-dashed border-rose-200 cursor-pointer">
             <input type="checkbox" id="checkSosmed" onchange="toggleSubmitButton()" class="mt-0.5 w-4 h-4 accent-rose-500 rounded">
             <span class="text-xs text-slate-600 font-semibold leading-relaxed">
-              Saya menyatakan telah mengikuti seluruh akun dan saluran resmi Suryatokoku di atas.
+              Saya menyatakan telah mengikuti seluruh akun, saluran resmi, dan memberikan ulasan bintang 5 Surya Cantik di atas.
             </span>
           </label>
         </div>
@@ -515,7 +486,7 @@
           <i class="fa-solid fa-circle-check"></i>
         </div>
         <h3 class="text-xl font-black text-slate-800">Kupon Undian</h3>
-        <p class="text-xs text-slate-400 font-medium mt-0.5">Simpan kupon ini dan tunjukkan kepada petugas di toko.</p>
+        <p class="text-xs text-slate-400 font-medium mt-0.5">Simpan kupon ini dan tunjukkan kepada petugas di toko Surya Cantik.</p>
       </div>
 
       <!-- Detail Kartu Kupon Utama -->
@@ -567,7 +538,7 @@
           <h3 class="text-sm font-extrabold flex items-center gap-2">
             <i class="fa-solid fa-qrcode text-amber-400"></i> Validasi Kupon Petugas
           </h3>
-          <p class="text-[10px] text-slate-400 mt-0.5 font-semibold">Khusus Petugas Toko Suryatokoku</p>
+          <p class="text-[10px] text-slate-400 mt-0.5 font-semibold">Khusus Petugas Toko Surya Cantik</p>
         </div>
         <i class="fa-solid fa-shield-check text-rose-400 text-xl"></i>
       </div>
@@ -685,8 +656,7 @@
           <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Pilih Alasan Penolakan</label>
           <select id="selectRejectionReason" onchange="handleRejectionReasonChange()" class="w-full h-11 px-3 text-xs rounded-xl border border-rose-100 bg-rose-50/20 focus:outline-none focus:ring-2 focus:ring-rose-200">
             <option value="Postingan tidak dapat diakses">Postingan tidak dapat diakses</option>
-            <option value="Belum tag @suryatokoku.id">Belum tag @suryatokoku.id</option>
-            <option value="Belum tag @suryafluencers">Belum tag @suryafluencers</option>
+            <option value="Belum tag @suryacantik.id">Belum tag @suryacantik.id</option>
             <option value="Akun Instagram diprivat">Akun Instagram diprivat</option>
             <option value="Konten tidak sesuai ketentuan">Konten tidak sesuai ketentuan</option>
             <option value="Link postingan tidak valid">Link postingan tidak valid</option>
@@ -894,10 +864,10 @@
       <div class="flex-grow flex flex-col justify-between gap-5 lg:w-3/5">
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-pink-100 text-pink-700 text-xs font-bold uppercase tracking-wider mb-2 border border-pink-200">
-            <i class="fa-solid fa-sparkles text-pink-500"></i> Undian Eksklusif Beautyfest
+            <i class="fa-solid fa-sparkles text-pink-500"></i> Undian Eksklusif Surcan Beauty Selebration
           </div>
           <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-800 tracking-tight">
-            Suryatokoku Lucky Draw
+            Surya Cantik Lucky Draw
           </h2>
           <!-- Indikator Hadiah & Ketentuan Undian -->
           <div class="mt-2.5 flex flex-wrap items-center gap-2 text-xs font-bold">
@@ -928,7 +898,7 @@
             </div>
           </div>
 
-          <!-- Tombol Aksi Mulai Undian Gradasi Pink-Ungu (Tanpa teks durasi) -->
+          <!-- Tombol Aksi Mulai Undian Gradasi Pink-Ungu -->
           <div class="w-full max-w-md mt-6">
             <button id="btnStartDraw" onclick="startLuckyDraw()" class="btn-active w-full h-13 py-3.5 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 hover:opacity-95 text-white font-extrabold tracking-wider text-sm shadow-button transition flex items-center justify-center gap-2">
               <i class="fa-solid fa-play"></i> <span>MULAI UNDIAN</span>
@@ -1009,7 +979,7 @@
             </div>
             <div>
               <h3 class="text-base font-extrabold text-slate-800">Ketentuan Lucky Draw</h3>
-              <p class="text-[10px] text-purple-600 font-bold uppercase tracking-wider">Beautyfest Suryatokoku</p>
+              <p class="text-[10px] text-purple-600 font-bold uppercase tracking-wider">Surcan Beauty Selebration</p>
             </div>
           </div>
           <button onclick="closeRulesModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition">
@@ -1086,7 +1056,7 @@
 
   <!-- ================= FOOTER ================= -->
   <footer class="bg-white/80 border-t border-rose-100/50 text-[10px] text-center py-4 text-slate-400 font-semibold">
-    <p>&copy; 2026 Suryatokoku. All Rights Reserved. Operational Development.</p>
+    <p>&copy; 2026 Surya Cantik. All Rights Reserved. Operational Development.</p>
   </footer>
 
   <!-- ================= JAVASCRIPT LOGIC ================= -->
@@ -1121,77 +1091,15 @@
           month: '2-digit',
           day: '2-digit'
         });
-        const formatted = formatter.format(d); // Format: "YYYY-MM-DD"
+        const formatted = formatter.format(d);
         const [y, m, day] = formatted.split('-').map(Number);
-        if (m === 9 && day >= 25 && day <= 27) {
-          return true;
-        }
+        if (m === 9 && day >= 25 && day <= 27) return true;
       } catch (e) {
         const m = d.getMonth() + 1;
         const day = d.getDate();
-        if (m === 9 && day >= 25 && day <= 27) {
-          return true;
-        }
+        if (m === 9 && day >= 25 && day <= 27) return true;
       }
       return false;
-    }
-
-    function showConfirmDialog(title, message, onConfirm) {
-      const modal = document.getElementById('customConfirmModal');
-      const titleEl = document.getElementById('confirmDialogTitle');
-      const msgEl = document.getElementById('confirmDialogMessage');
-      const actionBtn = document.getElementById('btnConfirmDialogAction');
-
-      if (!modal) return;
-      if (titleEl) titleEl.innerText = title;
-      if (msgEl) msgEl.innerHTML = message;
-      activeConfirmCallback = onConfirm;
-
-      if (actionBtn) {
-        actionBtn.onclick = async () => {
-          const callbackToExecute = activeConfirmCallback;
-          closeConfirmDialog();
-          if (typeof callbackToExecute === 'function') {
-            await callbackToExecute();
-          }
-        };
-      }
-      modal.classList.remove('hidden');
-    }
-
-    function closeConfirmDialog() {
-      const modal = document.getElementById('customConfirmModal');
-      if (modal) modal.classList.add('hidden');
-      activeConfirmCallback = null;
-    }
-
-    function openDrawSettingsModal() {
-      const modal = document.getElementById('drawSettingsModal');
-      const input = document.getElementById('inputDrawDuration');
-      if (input) input.value = drawDurationSeconds;
-      if (modal) modal.classList.remove('hidden');
-    }
-
-    function closeDrawSettingsModal() {
-      const modal = document.getElementById('drawSettingsModal');
-      if (modal) modal.classList.add('hidden');
-    }
-
-    function saveDrawDuration() {
-      const input = document.getElementById('inputDrawDuration');
-      const val = parseInt(input ? input.value : '10', 10);
-      if (isNaN(val) || val < 1) return showNotification("Durasi Tidak Valid", "Harap masukkan durasi minimal 1 detik.", "error");
-
-      drawDurationSeconds = val;
-      localStorage.setItem('stk_draw_duration', String(val));
-      updateDurationButtonLabel();
-      closeDrawSettingsModal();
-      showNotification("Pengaturan Disimpan", `Durasi undian kini diatur menjadi ${val} detik!`, "success");
-    }
-
-    function updateDurationButtonLabel() {
-      const labelEl = document.getElementById('labelDurationBtn');
-      if (labelEl) labelEl.innerText = `Durasi: ${drawDurationSeconds} Detik`;
     }
 
     let audioCtx = null;
@@ -1258,6 +1166,64 @@
       } catch (e) {}
     }
 
+    function showConfirmDialog(title, message, onConfirm) {
+      const modal = document.getElementById('customConfirmModal');
+      const titleEl = document.getElementById('confirmDialogTitle');
+      const msgEl = document.getElementById('confirmDialogMessage');
+      const actionBtn = document.getElementById('btnConfirmDialogAction');
+
+      if (!modal) return;
+      if (titleEl) titleEl.innerText = title;
+      if (msgEl) msgEl.innerHTML = message;
+      activeConfirmCallback = onConfirm;
+
+      if (actionBtn) {
+        actionBtn.onclick = async () => {
+          const callbackToExecute = activeConfirmCallback;
+          closeConfirmDialog();
+          if (typeof callbackToExecute === 'function') {
+            await callbackToExecute();
+          }
+        };
+      }
+      modal.classList.remove('hidden');
+    }
+
+    function closeConfirmDialog() {
+      const modal = document.getElementById('customConfirmModal');
+      if (modal) modal.classList.add('hidden');
+      activeConfirmCallback = null;
+    }
+
+    function openDrawSettingsModal() {
+      const modal = document.getElementById('drawSettingsModal');
+      const input = document.getElementById('inputDrawDuration');
+      if (input) input.value = drawDurationSeconds;
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeDrawSettingsModal() {
+      const modal = document.getElementById('drawSettingsModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function saveDrawDuration() {
+      const input = document.getElementById('inputDrawDuration');
+      const val = parseInt(input ? input.value : '10', 10);
+      if (isNaN(val) || val < 1) return showNotification("Durasi Tidak Valid", "Harap masukkan durasi minimal 1 detik.", "error");
+
+      drawDurationSeconds = val;
+      localStorage.setItem('stk_draw_duration', String(val));
+      updateDurationButtonLabel();
+      closeDrawSettingsModal();
+      showNotification("Pengaturan Disimpan", `Durasi undian kini diatur menjadi ${val} detik!`, "success");
+    }
+
+    function updateDurationButtonLabel() {
+      const labelEl = document.getElementById('labelDurationBtn');
+      if (labelEl) labelEl.innerText = `Durasi: ${drawDurationSeconds} Detik`;
+    }
+
     function openRulesModal() {
       const modal = document.getElementById('rulesModal');
       if (modal) modal.classList.remove('hidden');
@@ -1268,7 +1234,10 @@
     }
 
     let localVerificationStatus = {
-      ig_stk: false, ig_sf: false, ig_channel: false, ig_bf: false, tiktok_stk: false, wa_channel: false
+      ig_stk: false,
+      tiktok_stk: false,
+      wa_channel: false,
+      gmaps_review: false
     };
 
     window.addEventListener('DOMContentLoaded', () => {
@@ -1413,7 +1382,7 @@
     }
 
     function updateSocialButtonsVisual() {
-      const keys = ['ig_stk', 'ig_sf', 'ig_channel', 'ig_bf', 'tiktok_stk', 'wa_channel'];
+      const keys = ['ig_stk', 'tiktok_stk', 'wa_channel', 'gmaps_review'];
       keys.forEach(key => {
         const btn = document.getElementById(`btn_${key}`);
         if (btn && localVerificationStatus[key]) {
@@ -1591,7 +1560,7 @@
         console.warn("Gagal mengecek duplikasi WA:", err);
       }
 
-      showLoading(true, "Menyiapkan slot kupon undian...");
+      showLoading(true, "Menyiapkan kupon undian...");
 
       const tglLahir = document.getElementById('inputTanggalLahir').value;
       const jenisKelamin = document.getElementById('inputJenisKelamin').value;
@@ -1641,7 +1610,7 @@
         triggerWhatsAppRedirectPopup();
       } catch (err) {
         showLoading(false);
-        showNotification("Gagal Pendaftaran", "Kendala Supabase: " + err.message, "error");
+        showNotification("Gagal Pendaftaran", "Kendala Database: " + err.message, "error");
       }
     }
 
@@ -1788,11 +1757,6 @@
               </div>
               <p class="text-slate-500 text-[10px]">Kupon bonus ini telah <strong>sah dan aktif</strong> masuk ke dalam sistem undian 23 Hadiah Lucky Draw!</p>
             </div>
-            <div class="pt-1 text-center">
-              <span class="text-[10px] font-extrabold text-purple-600 uppercase tracking-wider bg-purple-100/70 px-3 py-1 rounded-full inline-block">
-                🎟️ Total 2 Kupon Anda Terdaftar di Undian
-              </span>
-            </div>
           </div>
         `;
         return;
@@ -1826,7 +1790,7 @@
       if (approval === 'Ditolak') {
         container.innerHTML = `
           <div class="p-5 rounded-2xl bg-rose-50 border border-rose-200 text-left space-y-3 shadow-sm">
-            <div class="flex justify-between items-center pb-1.5 border-b border-rose-200 font-black">
+            <div class="flex justify-between items-center pb-1.5 border-rose-200 font-black">
               <span class="flex items-center gap-1.5 uppercase text-rose-700 text-xs">
                 <i class="fa-solid fa-clapperboard text-rose-500"></i> Kupon Content Creator
               </span>
@@ -1838,81 +1802,12 @@
               <span class="font-bold flex items-center gap-1"><i class="fa-solid fa-circle-exclamation"></i> Alasan Penolakan:</span>
               <p class="font-medium">${data.creator_rejection_reason || 'Postingan tidak sesuai ketentuan.'}</p>
             </div>
-            <div class="space-y-2 pt-1">
-              <label class="block text-[10px] font-bold text-slate-500 uppercase">Perbaiki & Masukkan Tautan Instagram Baru</label>
-              <input type="url" id="inputLateInstagramLink" placeholder="https://www.instagram.com/p/..."
-                class="w-full h-10 px-3 text-xs rounded-xl border border-rose-200 bg-white focus:outline-none focus:ring-2 focus:ring-rose-300">
-              <button onclick="submitLateCreatorClaim()" class="btn-active w-full h-10 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl text-xs transition shadow-sm flex items-center justify-center gap-1.5">
-                <i class="fa-solid fa-repeat"></i> Kirim Ulang Verifikasi
-              </button>
-            </div>
           </div>
         `;
         return;
       }
 
-      container.innerHTML = `
-        <div class="p-5 rounded-3xl bg-gradient-to-br from-pink-50/80 to-purple-50/80 border border-rose-200 text-left space-y-3 shadow-sm">
-          <div class="font-black text-rose-600 flex items-center gap-1.5 text-xs uppercase tracking-wide">
-            <i class="fa-solid fa-gift animate-bounce"></i> BONUS 1 KUPON CONTENT CREATOR
-          </div>
-          <p class="text-xs text-slate-700 font-bold leading-relaxed">
-            Ingin <strong>1 kupon tambahan</strong>? Posting keseruan belanja kamu di Instagram dan klaim di sini!
-          </p>
-          <div class="space-y-2 pt-2 border-t border-rose-100">
-            <label class="block text-[10px] font-bold text-slate-500 uppercase">Tautan / Link Postingan Instagram</label>
-            <input type="url" id="inputLateInstagramLink" placeholder="https://www.instagram.com/p/..."
-              class="w-full h-11 px-3.5 text-xs rounded-xl border border-rose-200 bg-white focus:outline-none focus:ring-2 focus:ring-rose-300">
-            <button onclick="submitLateCreatorClaim()" class="btn-active w-full h-11 bg-gradient-to-r from-rose-500 to-purple-600 hover:opacity-95 text-white font-extrabold rounded-xl text-xs transition shadow-button flex items-center justify-center gap-1.5">
-              <i class="fa-solid fa-clapperboard"></i> Klaim Kupon Undian Content Creator
-            </button>
-          </div>
-        </div>
-      `;
-    }
-
-    async function submitLateCreatorClaim() {
-      if (!currentActiveTicketData) return;
-
-      const input = document.getElementById('inputLateInstagramLink');
-      const igUrl = input ? input.value.trim() : '';
-
-      if (!igUrl) return showNotification("Tautan Kosong", "Silakan masukkan link postingan Instagram Anda.", "error");
-      if (!igUrl.includes('instagram.com') && !igUrl.includes('instagr.am')) return showNotification("Tautan Tidak Valid", "Harap masukkan tautan resmi Instagram.", "error");
-
-      showLoading(true, "Memproses pengajuan Kupon Content Creator...");
-
-      try {
-        let creatorCode = currentActiveTicketData.creator_code;
-        if (!creatorCode || !creatorCode.startsWith('STK-CC')) {
-          creatorCode = await generateNextCreatorTicketNumber();
-        }
-
-        const updatePayload = {
-          creator_status: 'sudah',
-          instagram_link: igUrl,
-          creator_code: creatorCode,
-          creator_approval: 'Menunggu Verifikasi',
-          creator_rejection_reason: null
-        };
-
-        const { data, error } = await supabaseClient
-          .from('peserta_event')
-          .update(updatePayload)
-          .eq('id', currentActiveTicketData.id)
-          .select()
-          .single();
-
-        if (error) throw error;
-
-        currentActiveTicketData = data;
-        renderSuccessTicket(data);
-        showNotification("Klaim Berhasil Dikirim", `Kupon Content Creator <strong>${creatorCode}</strong> berhasil diajukan dan menunggu verifikasi petugas.`, "success");
-      } catch (err) {
-        showNotification("Gagal Mengajukan", err.message, "error");
-      } finally {
-        showLoading(false);
-      }
+      container.innerHTML = '';
     }
 
     function shareTicketToWA() {
@@ -1927,7 +1822,7 @@
         creatorInfo = `Menunggu Verifikasi [Kupon: ${data.creator_code}]`;
       }
 
-      const text = `Halo Admin Suryatokoku 😊 Saya sudah mendaftar kupon undian Beautyfest!\n\n` +
+      const text = `Halo Admin Surya Cantik 😊 Saya sudah mendaftar kupon undian Surcan Beauty Selebration!\n\n` +
                    `Nama: ${data.nama}\n` +
                    `no. WA : ${data.whatsapp}\n` +
                    `Nomor Undian: ${data.kode_undian}\n` +
@@ -2015,7 +1910,7 @@
 
     async function executeCouponActivation(code) {
       const officer = localStorage.getItem('suryatokoku_officer_name') || 'Petugas Toko';
-      showLoading(true, "Memvalidasi kupon di Supabase...");
+      showLoading(true, "Memvalidasi kupon di database...");
 
       try {
         const { data, error } = await supabaseClient.from('peserta_event').select('*').eq('kode_undian', code).maybeSingle();
@@ -2197,7 +2092,7 @@
       }
 
       closeOfficerModal();
-      showLoading(true, "Menyimpan status ke Supabase...");
+      showLoading(true, "Menyimpan status ke server...");
 
       const status = type === 'approve' ? 'Aktif' : 'Ditolak';
       try {
@@ -2603,7 +2498,7 @@
 
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Peserta Undian");
-      XLSX.writeFile(workbook, `Peserta_Beautyfest_Suryatokoku_${new Date().toISOString().slice(0, 10)}.xlsx`);
+      XLSX.writeFile(workbook, `Peserta_Surcan_Beauty_Selebration_${new Date().toISOString().slice(0, 10)}.xlsx`);
     }
 
     function downloadExcelTemplate() {
@@ -2637,7 +2532,7 @@
 
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Template Peserta");
-      XLSX.writeFile(workbook, "Template_Upload_Peserta_Beautyfest.xlsx");
+      XLSX.writeFile(workbook, "Template_Upload_Peserta_Surcan.xlsx");
       showNotification("Template Diunduh", "Template Excel berhasil didownload.", "success");
     }
 
@@ -2763,12 +2658,10 @@
       const pool = [];
 
       allParticipants.forEach(p => {
-        // Jangan sertakan jika nomor WhatsApp sudah pernah menang atau sudah pernah dinyatakan hangus
         if (p.whatsapp && (winnerWhatsapps.has(p.whatsapp) || allDiscardedWhatsapps.has(p.whatsapp))) return;
 
         const isSept25to27 = isRegisteredSept25to27(p.created_at);
 
-        // Kupon Utama: yang berstatus AKTIF atau yang mendaftar tanggal 25-27 September (meskipun belum aktif)
         if (p.kode_undian && (p.status_aktivasi === 'AKTIF' || isSept25to27)) {
           if (!winnerCodes.has(p.kode_undian) && !allDiscardedCodes.has(p.kode_undian)) {
             pool.push({
@@ -2782,7 +2675,6 @@
           }
         }
 
-        // Kupon Content Creator: yang berstatus AKTIF atau yang mendaftar tanggal 25-27 September
         if (p.creator_code && (p.creator_approval === 'Aktif' || isSept25to27)) {
           if (!winnerCodes.has(p.creator_code) && !allDiscardedCodes.has(p.creator_code)) {
             pool.push({
@@ -2864,7 +2756,6 @@
         return showNotification("Kandidat Habis", "Tidak ada kandidat kupon yang tersedia untuk diundi.", "error");
       }
 
-      // Pemenang diprioritaskan peserta yang mendaftar pada tanggal 25-27 September
       const targetPool = candidates.filter(c => isRegisteredSept25to27(c.created_at));
       const eligiblePool = targetPool.length > 0 ? targetPool : candidates;
 
@@ -3009,7 +2900,6 @@
         return;
       }
 
-      // Urutan naik: Hadiah ke-23 di paling bawah
       allWinners.sort((a, b) => (Number(a.hadiah_ke) || 0) - (Number(b.hadiah_ke) || 0));
 
       allWinners.forEach(w => {
